@@ -6,6 +6,7 @@ import { LearningTechnology } from "@/components/LearningTechnology";
 import { TypedText } from "@/components/TypedText";
 import { motion } from "framer-motion";
 import { userConfig } from "@/lib/config";
+import Image from "next/image";
 
 /**
  * 首页组件
@@ -31,10 +32,13 @@ export default function Home() {
               className="mb-8"
             >
               {userConfig.avatar ? (
-                <img
+                <Image
                   src={userConfig.avatar}
                   alt={userConfig.name}
-                  className="h-32 w-32 rounded-full object-cover"
+                  width={128}
+                  height={128}
+                  className="rounded-full object-cover"
+                  priority
                 />
               ) : (
                 <div className="flex h-32 w-32 items-center justify-center rounded-full bg-zinc-200 dark:bg-zinc-700">

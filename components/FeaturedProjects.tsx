@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { userConfig } from "@/lib/config";
 import React from "react";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -37,11 +38,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       {/* 项目图片 */}
       {image ? (
-        <div className="h-48 w-full overflow-hidden">
-          <img
+        <div className="relative h-48 w-full overflow-hidden">
+          <Image
             src={image}
             alt={title}
-            className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+            fill
+            className="object-cover transition-transform duration-300 hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       ) : (

@@ -1,6 +1,6 @@
 "use client";
 
-import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
+import { KeyboardArrowDown } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { userConfig } from "@/lib/config";
 import React, { useState } from "react";

@@ -56,10 +56,11 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, onClick }) => {
  * 支持无障碍操作
  */
 const ThemeToggleButton: React.FC = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line
     setMounted(true);
   }, []);
 
@@ -202,7 +203,7 @@ export const Navbar: React.FC = () => {
           "md:hidden bg-white/95 backdrop-blur dark:bg-zinc-900/95 transition-all duration-300",
           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
         ].join(" ")}
-        style={{ overflow: menuOpen ? "visible" as any : "hidden" }}
+        style={{ overflow: menuOpen ? "visible" : "hidden" }}
         aria-hidden={!menuOpen}
       >
         <div className="px-4 py-6">
